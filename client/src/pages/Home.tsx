@@ -23,7 +23,7 @@ export default function Home() {
             <img 
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-logo_eb00b5c5.png" 
               alt="KRONOS Logo" 
-              className="h-10 w-auto"
+              className="h-16 w-auto"
             />
           </a>
           <div className="flex items-center gap-6">
@@ -159,7 +159,7 @@ export default function Home() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-dashboard-new_19d76289.png"
                 alt="KRONOS Dashboard Demo"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-contain rounded-2xl"
               />
             </div>
 
