@@ -162,13 +162,13 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={slideInRight}
-              className="relative"
+              className="relative h-96 lg:h-full"
               style={{ y: scrollY * 0.5 }}
             >
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-industrial-context_8f0e2f0a.png"
                 alt="Industrial Analytics"
-                className="w-full rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </motion.div>
           </div>
