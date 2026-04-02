@@ -155,7 +155,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Demo Image */}
-            <div className="relative h-96 lg:h-full min-h-96">
+            <div className="relative h-full min-h-screen">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-dashboard-new_19d76289.png"
                 alt="KRONOS Dashboard Demo"
@@ -226,9 +226,9 @@ export default function Home() {
           </div>
 
           {/* Step Details */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
             {[
-              { number: "1", title: "Recolección", desc: "Sensores e IoT devices capturan datos en tiempo real" },
+              { number: "1", title: "Ingesta", desc: "Conexión a SCADA en tiempo real" },
               { number: "2", title: "Procesamiento", desc: "Modelos IA procesan y analizan patrones" },
               { number: "3", title: "Insights", desc: "Dashboard genera insights accionables" },
               { number: "4", title: "Optimización", desc: "Mejora continua de operaciones" }
@@ -340,13 +340,9 @@ export default function Home() {
                   <Mail className="w-4 h-4" />
                   <span className="text-sm">rodhub09@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
+                <a href="https://www.linkedin.com/company/kronos-predictive-analytics" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
                   <Linkedin className="w-4 h-4" />
                   <span className="text-sm">LinkedIn</span>
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
-                  <Twitter className="w-4 h-4" />
-                  <span className="text-sm">Twitter/X</span>
                 </a>
               </div>
             </div>
