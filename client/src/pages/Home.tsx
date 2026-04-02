@@ -18,15 +18,14 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-white/5 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">K</span>
-            </div>
-            <span className="font-bold text-lg bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              KRONOS
-            </span>
-          </div>
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
+            <img 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-logo_eb00b5c5.png" 
+              alt="KRONOS Logo" 
+              className="h-10 w-auto"
+            />
+          </a>
           <div className="flex items-center gap-6">
             <a href="#demo" className="text-sm text-gray-300 hover:text-white transition">Demo</a>
             <a href="#team" className="text-sm text-gray-300 hover:text-white transition">Equipo</a>
@@ -308,14 +307,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">K</span>
-                </div>
-                <span className="font-bold text-lg bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  KRONOS
-                </span>
-              </div>
+                <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
+                <img 
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-logo_eb00b5c5.png" 
+                  alt="KRONOS Logo" 
+                  className="h-8 w-auto"
+                />
+              </a>
               <p className="text-gray-400">
                 Transformando la operación industrial con inteligencia predictiva de próxima generación.
               </p>
