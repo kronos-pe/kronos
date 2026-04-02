@@ -66,25 +66,27 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Downtime no planificado: hasta 40% de pérdidas anuales</span>
+                  <span className="text-gray-200">Downtime no planificado que impacta la producción</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Mantenimiento reactivo vs. predictivo: 3x más costoso</span>
+                  <span className="text-gray-200">Mantenimiento reactivo en lugar de predictivo</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Ineficiencia operativa: oportunidades perdidas diariamente</span>
+                  <span className="text-gray-200">Ineficiencia operativa y oportunidades perdidas</span>
                 </div>
               </div>
 
               {/* CTA */}
               <div className="pt-4">
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-6 text-lg rounded-lg group">
-                  Solicitar Demo
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
-                </Button>
-                <p className="text-sm text-gray-400 mt-3">Acceso inmediato • Sin tarjeta de crédito</p>
+                <a href="mailto:rodhub09@gmail.com" className="inline-block">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-6 text-lg rounded-lg group">
+                    Solicitar Demo
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
+                  </Button>
+                </a>
+                <p className="text-sm text-gray-400 mt-3">Contacta con nosotros para una demo personalizada</p>
               </div>
             </div>
 
@@ -155,7 +157,7 @@ export default function Home() {
             {/* Left: Demo Image */}
             <div className="relative h-96 lg:h-full min-h-96">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-solution-visual-aSGrsSqXZJDu8vqzsGm2Dg.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-dashboard-new_19d76289.png"
                 alt="KRONOS Dashboard Demo"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -194,10 +196,12 @@ export default function Home() {
                 </div>
               </div>
 
+            <a href="mailto:rodhub09@gmail.com" className="inline-block">
               <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-6 text-lg rounded-lg group">
                 Probar Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
               </Button>
+            </a>
             </div>
           </div>
         </div>
@@ -215,7 +219,7 @@ export default function Home() {
 
           <div className="relative">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-how-it-works-Egx6g2XKTMJFPmfTXBcEnF.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-how-it-works-dark-aAhNmHckpUNBKs7XkPPj83.webp"
               alt="How KRONOS Works"
               className="w-full rounded-2xl"
             />
@@ -246,9 +250,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { metric: "85%", label: "Reducción de Downtime", icon: <BarChart3 className="w-8 h-8" /> },
-              { metric: "40%", label: "Aumento de Eficiencia", icon: <TrendingUp className="w-8 h-8" /> },
-              { metric: "3x", label: "ROI en 12 meses", icon: <Zap className="w-8 h-8" /> }
+              { metric: "Predicción", label: "Detección temprana de fallas", icon: <BarChart3 className="w-8 h-8" /> },
+              { metric: "Optimización", label: "Mejora continua de operaciones", icon: <TrendingUp className="w-8 h-8" /> },
+              { metric: "Confiabilidad", label: "Decisiones basadas en datos", icon: <Zap className="w-8 h-8" /> }
             ].map((item, idx) => (
               <div key={idx} className="p-8 rounded-xl border border-white/10 bg-white/5 text-center group hover:border-purple-500/50 transition">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition">
@@ -274,12 +278,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {[
-              { name: "Carlos Mendez", role: "CEO & Co-Founder", bg: "from-purple-600 to-purple-400", desc: "15 años en optimización industrial" },
-              { name: "Sofia Ruiz", role: "CTO & Co-Founder", bg: "from-cyan-600 to-cyan-400", desc: "PhD en Machine Learning" },
-              { name: "Juan Pérez", role: "VP Operations", bg: "from-purple-500 to-cyan-500", desc: "Experiencia en plantas de energía" },
-              { name: "Maria Garcia", role: "Head of Data", bg: "from-cyan-500 to-purple-500", desc: "Especialista en IA predictiva" }
+              { name: "Rodrigo Urquizo", role: "CEO", bg: "from-purple-600 to-purple-400", desc: "Liderando la transformación industrial" },
+              { name: "Stefano Nuñez", role: "CTO", bg: "from-cyan-600 to-cyan-400", desc: "Experto en tecnología predictiva" }
             ].map((member, idx) => (
               <div
                 key={idx}
@@ -334,9 +336,9 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Contacto</h4>
               <div className="space-y-3">
-                <a href="mailto:hello@kronos.ai" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
+                <a href="mailto:rodhub09@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
                   <Mail className="w-4 h-4" />
-                  <span className="text-sm">hello@kronos.ai</span>
+                  <span className="text-sm">rodhub09@gmail.com</span>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition">
                   <Linkedin className="w-4 h-4" />
