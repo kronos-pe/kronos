@@ -93,7 +93,7 @@ export default function Home() {
             {/* Right: Hero Image */}
             <div className="relative h-96 lg:h-full min-h-96">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-hero-bg-cgbfWNomZ6xUVYWgLvAfzM.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-industrial-context_9266020d.png"
                 alt="KRONOS Analytics Dashboard"
                 className="w-full h-full object-cover rounded-2xl"
               />
