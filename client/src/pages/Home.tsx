@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-logo_eb00b5c5.png" 
+              src="/images/kronos-logo.png" 
               alt="KRONOS Logo" 
               className="h-16 w-auto"
             />
@@ -157,7 +157,7 @@ export default function Home() {
             {/* Left: Demo Image */}
             <div className="relative h-full min-h-screen">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-dashboard-new_19d76289.png"
+                src="/images/kronos-dashboard.png"
                 alt="KRONOS Dashboard Demo"
                 className="w-full h-full object-contain rounded-2xl"
               />
@@ -219,7 +219,7 @@ export default function Home() {
 
           <div className="relative">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-how-it-works-dark-aAhNmHckpUNBKs7XkPPj83.webp"
+              src="/images/kronos-how-it-works.webp"
               alt="How KRONOS Works"
               className="w-full rounded-2xl"
             />
@@ -311,7 +311,7 @@ export default function Home() {
             <div>
                 <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
                 <img 
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-logo_eb00b5c5.png" 
+                  src="/images/kronos-logo.png" 
                   alt="KRONOS Logo" 
                   className="h-8 w-auto"
                 />
