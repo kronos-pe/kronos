@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Twitter, ArrowRight, Zap, TrendingUp, Cpu, BarChart3 } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 /**
  * KRONOS Landing Page
@@ -13,6 +14,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [hoveredTeamMember, setHoveredTeamMember] = useState<number | null>(null);
+  const basePath = import.meta.env.BASE_URL || "/";
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
@@ -21,7 +23,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
             <img 
-              src="/images/kronos-logo.png" 
+              src={`${basePath}images/kronos-logo.png`} 
               alt="KRONOS Logo" 
               className="h-16 w-auto"
             />
@@ -30,9 +32,11 @@ export default function Home() {
             <a href="#demo" className="text-sm text-gray-300 hover:text-white transition">Demo</a>
             <a href="#team" className="text-sm text-gray-300 hover:text-white transition">Equipo</a>
             <a href="#contact" className="text-sm text-gray-300 hover:text-white transition">Contacto</a>
-            <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0">
-              Solicitar Demo
-            </Button>
+            <a href="mailto:rodhub09@gmail.com?subject=Solicitud de Demo de KRONOS">
+              <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0">
+                Solicitar Demo
+              </Button>
+            </a>
           </div>
         </div>
       </nav>
@@ -45,20 +49,25 @@ export default function Home() {
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-4 relative z-10"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Problem Statement */}
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="block">Tus operaciones</span>
-                  <span className="block">se detienen.</span>
+                  <span className="block">Fallas y anomalías</span>
+                  <span className="block">en tus operaciones</span>
                   <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    Nosotros las predecimos.
+                    Nosotros las predecimos
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-lg">
-                  Pérdidas millonarias por fallas inesperadas. Decisiones reactivas en lugar de predictivas. Eficiencia operativa comprometida.
+                  Pérdidas económicas por fallas inesperadas. Decisiones reactivas en lugar de predictivas. Eficiencia operativa comprometida.
                 </p>
               </div>
 
@@ -66,21 +75,21 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Downtime no planificado que impacta la producción</span>
+                  <span className="text-gray-200">Procesamiento de datos provenientes de SCADA</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Mantenimiento reactivo en lugar de predictivo</span>
+                  <span className="text-gray-200">Análisis predictivo para detectar anomalías y anticipar fallas</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-200">Ineficiencia operativa y oportunidades perdidas</span>
+                  <span className="text-gray-200">Análisis prescriptivo con IA para toma de decisiones estratégicas</span>
                 </div>
               </div>
 
               {/* CTA */}
               <div className="pt-4">
-                <a href="mailto:rodhub09@gmail.com" className="inline-block">
+                <a href="mailto:rodhub09@gmail.com?subject=Solicitud de Demo de KRONOS" className="inline-block">
                   <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-6 text-lg rounded-lg group">
                     Solicitar Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
@@ -91,23 +100,28 @@ export default function Home() {
             </div>
 
             {/* Right: Hero Image */}
-            <div className="relative h-96 lg:h-full min-h-96">
+            <div className="relative h-96 lg:h-full min-h-96 flex items-center justify-center">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663453519234/iPFDnW6gFzgVoApnM2eHbP/kronos-hero-bg-cgbfWNomZ6xUVYWgLvAfzM.webp"
+                src={`${basePath}images/kronos-hero.webp`}
                 alt="KRONOS Analytics Dashboard"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-contain rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-2xl"></div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* SOLUTION SECTION */}
       <section className="py-20 relative">
-        <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4"
+        >
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">La Solución: KRONOS</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">La solución: KRONOS</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Analítica predictiva de próxima generación que transforma datos en decisiones inteligentes
             </p>
@@ -119,9 +133,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Predicción de Fallas</h3>
+              <h3 className="text-xl font-bold mb-2">Procesamiento de datos</h3>
               <p className="text-gray-300">
-                Detecta anomalías antes de que ocurran. Reduce downtime hasta 85% con modelos IA entrenados en datos industriales reales.
+                Limpia, estructura y procesa datos provenientes de SCADA
               </p>
             </div>
 
@@ -130,9 +144,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Optimización en Tiempo Real</h3>
+              <h3 className="text-xl font-bold mb-2">Predicción de Fallas</h3>
               <p className="text-gray-300">
-                Ajusta variables operativas automáticamente. Maximiza eficiencia energética y rendimiento con simulaciones controladas.
+                Detecta anomalías antes de que ocurran. Reduce downtime con modelos de ML entrenados en datos industriales reales.
               </p>
             </div>
 
@@ -147,17 +161,23 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* DEMO SECTION */}
       <section id="demo" className="py-20 relative">
-        <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Demo Image */}
             <div className="relative h-full min-h-screen">
               <img
-                src="/images/kronos-dashboard.png"
+                src={`${basePath}images/kronos-dashboard.png`}
                 alt="KRONOS Dashboard Demo"
                 className="w-full h-full object-contain rounded-2xl"
               />
@@ -166,9 +186,9 @@ export default function Home() {
             {/* Right: Demo Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-4">Mira KRONOS en Acción</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-4">Mira a KRONOS en acción</h2>
                 <p className="text-xl text-gray-300">
-                  Dashboard intuitivo que convierte datos complejos en insights accionables. Visualiza predicciones, optimizaciones y métricas clave en tiempo real.
+                  Dashboard intuitivo que convierte datos complejos en insights accionables. Visualiza predicciones y métricas clave en tiempo real.
                 </p>
               </div>
 
@@ -176,27 +196,27 @@ export default function Home() {
                 <div className="flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-purple-500 to-cyan-500"></div>
                   <div>
-                    <p className="font-semibold">Predicciones de 7 días</p>
+                    <p className="font-semibold">Predicciones con ventana de tiempo ajustable</p>
                     <p className="text-sm text-gray-400">Planifica con confianza</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
                   <div>
-                    <p className="font-semibold">Alertas Inteligentes</p>
+                    <p className="font-semibold">Alertas inteligentes</p>
                     <p className="text-sm text-gray-400">Notificaciones antes del problema</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-purple-500 to-cyan-500"></div>
                   <div>
-                    <p className="font-semibold">Recomendaciones Automáticas</p>
+                    <p className="font-semibold">Recomendaciones automáticas</p>
                     <p className="text-sm text-gray-400">Acciones sugeridas basadas en IA</p>
                   </div>
                 </div>
               </div>
 
-            <a href="mailto:rodhub09@gmail.com" className="inline-block">
+            <a href="mailto:rodhub09@gmail.com?subject=Solicitud de Demo de KRONOS" className="inline-block">
               <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 px-8 py-6 text-lg rounded-lg group">
                 Probar Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
@@ -204,14 +224,20 @@ export default function Home() {
             </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* HOW IT WORKS SECTION */}
       <section className="py-20 relative">
-        <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4"
+        >
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Cómo Funciona</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Cómo funciona</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Cuatro pasos simples para transformar tu operación industrial
             </p>
@@ -219,7 +245,7 @@ export default function Home() {
 
           <div className="relative">
             <img
-              src="/images/kronos-how-it-works.webp"
+              src={`${basePath}images/kronos-how-it-works.png`}
               alt="How KRONOS Works"
               className="w-full rounded-2xl"
             />
@@ -229,7 +255,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
             {[
               { number: "1", title: "Ingesta", desc: "Conexión a SCADA en tiempo real" },
-              { number: "2", title: "Procesamiento", desc: "Modelos IA procesan y analizan patrones" },
+              { number: "2", title: "Procesamiento", desc: "Modelos de IA procesan y analizan patrones" },
               { number: "3", title: "Insights", desc: "Dashboard genera insights accionables" },
               { number: "4", title: "Optimización", desc: "Mejora continua de operaciones" }
             ].map((step, idx) => (
@@ -242,12 +268,18 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* METRICS SECTION */}
       <section className="py-20 relative">
-        <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4"
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { metric: "Predicción", label: "Detección temprana de fallas", icon: <BarChart3 className="w-8 h-8" /> },
@@ -265,31 +297,38 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* TEAM SECTION */}
       <section id="team" className="py-20 relative">
-        <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4"
+        >
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Nuestro Equipo</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Expertos en ingeniería, data science y operaciones industriales
-            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Nuestro equipo</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {[
-              { name: "Rodrigo Urquizo", role: "CEO", bg: "from-purple-600 to-purple-400", desc: "Liderando la transformación industrial" },
-              { name: "Stefano Nuñez", role: "CTO", bg: "from-cyan-600 to-cyan-400", desc: "Experto en tecnología predictiva" }
+              { name: "Rodrigo Urquizo", role: "CEO", bg: "from-purple-600 to-purple-400", desc: "" },
+              { name: "Stefano Nuñez", role: "CTO", bg: "from-cyan-600 to-cyan-400", desc: "" }
             ].map((member, idx) => (
               <div
                 key={idx}
-                className="group cursor-pointer"
+                className="group cursor-pointer text-center"
                 onMouseEnter={() => setHoveredTeamMember(idx)}
                 onMouseLeave={() => setHoveredTeamMember(null)}
               >
-                <div className={`w-full aspect-square bg-gradient-to-br ${member.bg} rounded-xl mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:scale-105 transition`}>
+                {/* 
+                  Puedes cambiar el tamaño del cuadrado modificando 'w-40' (ancho) y 'h-40' (alto). 
+                  Por ejemplo: 'w-32 h-32' (más pequeño), 'w-48 h-48' (más grande). 
+                */}
+                <div className={`w-55 h-55 mx-auto bg-gradient-to-br ${member.bg} rounded-xl mb-4 flex items-center justify-center text-white text-3xl font-bold group-hover:scale-105 transition`}>
                   {member.name.charAt(0)}
                 </div>
                 <h3 className="font-bold text-lg">{member.name}</h3>
@@ -300,7 +339,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}
@@ -311,13 +350,13 @@ export default function Home() {
             <div>
                 <a href="#" className="flex items-center gap-2 hover:opacity-80 transition">
                 <img 
-                  src="/images/kronos-logo.png" 
+                  src={`${basePath}images/kronos-logo.png`} 
                   alt="KRONOS Logo" 
                   className="h-8 w-auto"
                 />
               </a>
               <p className="text-gray-400">
-                Transformando la operación industrial con inteligencia predictiva de próxima generación.
+                Transformando la operación industrial con análisis predictivo y prescriptivo basado en IA.
               </p>
             </div>
 
