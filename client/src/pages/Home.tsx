@@ -13,7 +13,7 @@ export default function Home() {
   const basePath = import.meta.env.BASE_URL || "/";
   
   const emailBody = "Hola equipo KRONOS,%0D%0A%0D%0AMe gustaría solicitar una demostración de la plataforma para mi empresa.%0D%0A%0D%0AQuedo atento/a,%0D%0A[Tu Nombre]";
-  const mailtoLink = `mailto:rodhub09@gmail.com?subject=Solicitud de Demo de KRONOS&body=${emailBody}`;
+  const mailtoLink = `mailto:kronos.ind.analytics@gmail.com?subject=Solicitud de Demo de KRONOS&body=${emailBody}`;
 
   return (
     <div className="min-h-screen bg-[#070707] text-gray-100 font-sans selection:bg-cyan-900 selection:text-white"
@@ -27,7 +27,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-[2px] w-full bg-[#070707]/90 backdrop-blur-md border-b border-white/5 z-40 transition-all">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <a href="https://kronos-pe.github.io/kronos/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img 
               src={`${basePath}images/logo.png`} 
               alt="KRONOS Logo" 
@@ -377,7 +377,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <a href="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
+              <a href="https://kronos-pe.github.io/kronos/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
                 <img 
                   src={`${basePath}images/logo.png`} 
                   alt="KRONOS Logo" 
@@ -406,7 +406,7 @@ export default function Home() {
               <div className="space-y-4">
                 <a href={mailtoLink} className="flex items-center gap-3 text-gray-500 hover:text-white transition-colors border border-transparent hover:border-white/10 p-2 -ml-2 rounded-sm">
                   <Mail className="w-4 h-4" />
-                  <span className="text-sm font-light">rodhub09@gmail.com</span>
+                  <span className="text-sm font-light">kronos.ind.analytics@gmail.com</span>
                 </a>
                 <a href="https://www.linkedin.com/company/kronos-predictive-analytics" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-500 hover:text-white transition-colors border border-transparent hover:border-white/10 p-2 -ml-2 rounded-sm">
                   <Linkedin className="w-4 h-4" />
