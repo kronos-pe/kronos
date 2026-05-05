@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, ArrowRight, Zap, TrendingUp, Cpu, BarChart3 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 /**
  * KRONOS Landing Page
@@ -10,6 +13,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const [hoveredTeamMember, setHoveredTeamMember] = useState<number | null>(null);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const basePath = import.meta.env.BASE_URL || "/";
   
   const emailBody = "Hola equipo KRONOS,%0D%0A%0D%0AMe gustaría solicitar una demostración de la plataforma para mi empresa.%0D%0A%0D%0AQuedo atento/a,%0D%0A[Tu Nombre]";
@@ -39,7 +43,7 @@ export default function Home() {
             <a href="#demo" className="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Demo</a>
             <a href="#team" className="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Equipo</a>
             <a href="#contact" className="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contacto</a>
-            <a href={mailtoLink}>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsDemoModalOpen(true); }}>
               <Button className="bg-white hover:bg-gray-200 text-black rounded-none px-6 py-5 text-xs uppercase tracking-widest font-bold transition-all border border-transparent">
                 Solicitar Demo
               </Button>
@@ -93,7 +97,7 @@ export default function Home() {
 
               {/* CTA */}
               <div className="pt-4 flex flex-col items-start gap-3">
-                <a href={mailtoLink} className="inline-block group">
+                <a href="#" onClick={(e) => { e.preventDefault(); setIsDemoModalOpen(true); }} className="inline-block group">
                   <Button className="bg-transparent hover:bg-white hover:text-black text-white border border-white/20 rounded-none px-6 py-5 text-sm uppercase tracking-widest font-bold transition-all">
                     Solicitar Demo
                     <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -229,7 +233,7 @@ export default function Home() {
               </div>
 
               <div className="pt-4">
-                <a href={mailtoLink} className="inline-block group">
+                <a href="#" onClick={(e) => { e.preventDefault(); setIsDemoModalOpen(true); }} className="inline-block group">
                   <Button className="bg-white hover:bg-gray-200 text-black rounded-none px-8 py-6 text-sm uppercase tracking-widest font-bold transition-all">
                     Probar Demo
                     <ArrowRight className="ml-3 w-4 h-4 text-black group-hover:translate-x-2 transition-transform inline" />
@@ -427,6 +431,63 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Demo Modal */}
+      <Dialog open={isDemoModalOpen} onOpenChange={setIsDemoModalOpen}>
+        <DialogContent className="bg-[#050505] border-white/10 text-white sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold uppercase tracking-widest text-white">Solicitar Demo</DialogTitle>
+            <DialogDescription className="text-gray-400 font-light mt-2">
+              Déjanos tus datos y nos pondremos en contacto contigo para coordinar una demostración personalizada.
+            </DialogDescription>
+          </DialogHeader>
+
+          <form action="https://formspree.io/f/maqvoegd" method="POST" className="space-y-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="nombres" className="text-xs uppercase tracking-widest text-gray-400">Nombres *</Label>
+                <Input id="nombres" name="Nombres" required className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-xs uppercase tracking-widest text-gray-400">Email *</Label>
+                <Input id="email" name="email" type="email" required className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="telefono" className="text-xs uppercase tracking-widest text-gray-400">Teléfono</Label>
+                <Input id="telefono" name="Telefono" type="tel" className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="empresa" className="text-xs uppercase tracking-widest text-gray-400">Empresa</Label>
+                <Input id="empresa" name="Empresa" className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="website" className="text-xs uppercase tracking-widest text-gray-400">Página Web</Label>
+                <Input id="website" name="Website" type="url" className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="linkedin" className="text-xs uppercase tracking-widest text-gray-400">LinkedIn</Label>
+                <Input id="linkedin" name="Linkedin" type="url" className="bg-black border-white/10 text-white focus-visible:ring-cyan-500 focus-visible:border-cyan-500 rounded-none h-11" />
+              </div>
+            </div>
+
+            <div className="pt-6">
+              <Button type="submit" className="w-full bg-white hover:bg-gray-200 text-black rounded-none py-6 text-sm uppercase tracking-widest font-bold transition-all">
+                Enviar Solicitud
+                <ArrowRight className="ml-3 w-4 h-4" />
+              </Button>
+              <p className="text-center text-xs text-cyan-400 font-light mt-4 tracking-wide uppercase">
+                Te contactaremos en los siguientes días
+              </p>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
