@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { AnimatedLines } from "@/components/AnimatedLines";
 
 /**
  * KRONOS Landing Page
@@ -20,7 +21,7 @@ export default function Home() {
   const mailtoLink = `mailto:kronos.ind.analytics@gmail.com?subject=Solicitud de Demo de KRONOS&body=${emailBody}`;
 
   return (
-    <div className="min-h-screen bg-[#070707] text-gray-100 font-sans selection:bg-cyan-900 selection:text-white"
+    <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-cyan-900 selection:text-white"
          style={{ 
            backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)',
            backgroundSize: '32px 32px'
@@ -29,9 +30,9 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 z-50"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-[2px] w-full bg-[#070707]/90 backdrop-blur-md border-b border-white/5 z-40 transition-all">
+      <nav className="fixed top-[2px] w-full bg-black/90 backdrop-blur-md border-b border-white/5 z-40 transition-all">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="https://kronos-pe.github.io/kronos/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <a href="https://kronos-ml.vercel.app/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img 
               src={`${basePath}images/logo.png`} 
               alt="KRONOS Logo" 
@@ -53,9 +54,9 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      {/* HERO SECTION */}
-      <section className="min-h-screen flex items-center pt-24 pb-12 relative">
-        <motion.div 
+      <section className="min-h-screen flex items-center pt-24 pb-12 relative bg-black overflow-hidden">
+        <AnimatedLines />
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -107,19 +108,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Hero Image */}
-            <div className="relative h-[40vh] lg:h-[65vh] max-h-[550px] flex items-center justify-center w-full">
-              {/* Sharp decorative borders */}
-              <div className="absolute inset-0 border border-white/5 bg-[#0a0a0a]">
-                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-cyan-500"></div>
-                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-purple-500"></div>
-                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-purple-500"></div>
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-cyan-500"></div>
-              </div>
+            {/* Right: Hero Logo */}
+            <div className="relative flex items-center justify-center w-full py-8 lg:py-0">
               <img
-                src={`${basePath}images/kronos-hero.webp`}
-                alt="KRONOS Analytics System"
-                className="w-full h-full object-cover z-10 rounded-lg p-1"
+                src={`${basePath}images/kronos-logo.png`}
+                alt="KRONOS"
+                className="relative z-10 w-full max-w-lg lg:max-w-xl xl:max-w-2xl object-contain"
               />
             </div>
           </div>
@@ -381,7 +375,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <a href="https://kronos-pe.github.io/kronos/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
+              <a href="https://kronos-ml.vercel.app/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
                 <img 
                   src={`${basePath}images/logo.png`} 
                   alt="KRONOS Logo" 
