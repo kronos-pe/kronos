@@ -189,11 +189,16 @@ export default function Home() {
             {/* Top: Demo Image full width */}
             <div className="w-full relative group">
               <div className="absolute inset-0 border border-white/10 bg-[#0a0a0a] overflow-hidden -z-10"></div>
-              <img
-                src={`${basePath}images/kronos-dashboard.png`}
-                alt="KRONOS Dashboard Demo"
-                className="w-full h-auto max-h-[70vh] object-contain border border-white/5 rounded-lg"
-              />
+              <video
+                src={`${basePath}images/video_demo.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto object-contain border border-white/5 rounded-lg"
+              >
+                Tu navegador no soporta el elemento de video.
+              </video>
             </div>
 
             {/* Bottom: Demo Content */}
